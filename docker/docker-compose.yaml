@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+    server-ProjectElectron:
+        image: ubuntu:lasted
+        build: .
+        container_name: ProjectElectron
+        restart: on-failure
+        ports:
+            - 8000:80
+        volumes:
+            - ./files:/home
+        networks:
+            - net-ProjectElectron
+
+networks:
+    net-ProjectElectron:
+        driver: bridge
